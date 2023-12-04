@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Convite Virtual</title>
+    <style>
+        body {
+            font-family: "Verdana",;
+            text-align: center;
+            background-color: #000000;
+            margin: 0;
+            padding: 0;
+            overflow: hidden; /* Impede a rolagem vertical */
+        }
+
+      
+        #conviteVideo {
+            width: 100vw; /* Define a largura do vídeo como 100% da largura da janela de visualização */
+            height: 100vh; /* Define a altura do vídeo como 100% da altura da janela de visualização */
+            object-fit: cover; /* Garante que o vídeo cubra totalmente a área designada, mantendo a proporção original */
+
+        }
+
+        #convitegif {
+            display: none;
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+
+        }
+
+        img {
+            width: 100%;
+            height: auto;
+        }
+
+        .container {
+            font-family: "Cambria";
+            display: none;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            max-width: 600px;
+            background-color: rgba(255, 255, 255, 0.4);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #1a1308; /* cor do titulo */
+        }
+
+        p {
+            color: #020201; /* cor do texto do convite */
+        }
+
+        .btn {
+            display: none;
+            padding: 10px 20px;
+            margin: 10px;
+            text-decoration: none;
+            background-color: #000000;
+            color: #e4e4e4; /* cor do texto */
+            border-radius: 30px; /* Raio de borda para tornar o botão redondo */
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+    <video id="conviteVideo" width="100%" height="100%" controls>
+        <source src="teste3.mp4"  type="video/mp4">
+    </video>
+
+    <div class="convitegif">
+        <img src="0f5376cd-6521-4e24-abaf-b48f221eb15b.jpeg" alt="Descrição do GIF">
+    </div>
+
+    <div class="container" id="conviteContainer">
+        <h1>Convite de Gala</h1>
+        <p>Você está convidado para um evento especial!</p>
+        <p>Guarde esta data e venha
+           celebrar conosco o encerramento
+           de nossas atividades do ano de 2023.</p>
+
+        <a href="4.jpg" class="btn">Mais Informações</a>
+    </div>
+
+    <script>
+        var video = document.getElementById("conviteVideo");
+        var gif = document.getElementById("conviteGIF");
+        var container = document.getElementById("conviteContainer");
+        var btn = document.querySelector(".btn");
+
+        video.addEventListener("ended", function() {
+            video.style.display = "none"; // Oculta o vídeo
+            container.style.display = "block";
+            btn.style.display = "inline-block";
+        });
+
+        btn.addEventListener("click", function() {
+            window.location.href = "link-para-o-convite";
+        });
+    </script>
+</body>
+</html>
